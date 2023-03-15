@@ -1,0 +1,42 @@
+{
+    "name": "bloodbank_api",
+    "version": "1.0.0",
+    "description": "A Starter ExpressJs repository.",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node server.js",
+        "create-env": "printenv > .env",
+        "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AD17YAKR/expressjs_template.git"
+    },
+    "author": "AD17YAKR",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AD17YAKR/expressjs_template/issues"
+    },
+    "homepage": "https://github.com/AD17YAKR/expressjs_template#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.1",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "express-fileupload": "^1.4.0",
+        "express-mongo-sanitize": "^2.2.0",
+        "express-rate-limit": "^6.7.0",
+        "helmet": "^6.0.1",
+        "hpp": "^0.2.3",
+        "jsonwebtoken": "^9.0.0",
+        "mongoose": "^6.9.1",
+        "morgan": "^1.10.0",
+        "xss-clean": "^0.1.1"
+    },
+    "devDependencies": {
+        "prettier": "^2.8.4"
+    }
+}
