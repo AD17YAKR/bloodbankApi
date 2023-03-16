@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "28bb6db5-c60d-4b22-b4b9-2da68a234c59",
+		"name": "bloodBank_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18470104"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"AKS\",\r\n    \"phone\": \"+916290949425\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"usertest@gmail.com\",\r\n    \"address\": \"Salkia,Howrah\",\r\n    \"password\": \"testing\",\r\n    \"bloodGroup\": \"O+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/auth/register/user",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"auth",
+								"register",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"usertest@gmail.com\",\r\n    \"password\": \"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/auth/login/user/",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"auth",
+								"login",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Hospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"City Hospital\",\r\n    \"email\": \"cityhospital@howrah.com\",\r\n    \"phone\": \"+919999999999\",\r\n    \"address\": \"City Hospital Howrah By Road Ac market\",\r\n    \"password\": \"1234567890\",\r\n    \"bloodSamples\": {\r\n        \"bloodGroup\": \"O+\",\r\n        \"units\": \"11\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/auth/register/hospital/",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"auth",
+								"register",
+								"hospital",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Hospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"cityhospital@howrah.com\",\r\n    \"password\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/auth/login/hospital",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"auth",
+								"login",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BloodBank",
+			"item": [
+				{
+					"name": "Get all Bloodbank data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodGroup\": \"O+\",\r\n    \"units\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/bloodbank/all",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"bloodbank",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bloodbank data by Hospital",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodGroup\": \"O+\",\r\n    \"units\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/bloodbank/",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"bloodbank",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Bloodbank data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodGroup\": \"O+\",\r\n    \"units\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/bloodbank",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"bloodbank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bloodbank data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTFlYjA4YTU3Yjg5YjZmNjc1MjA1OCIsImlhdCI6MTY3ODk2Mjk4MiwiZXhwIjoxNjgxNTU0OTgyfQ.pzoK44sajH2D4LtCn4t8QeZ19GaiKTCFZqo3UK7dsbw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodGroup\": \"O+\",\r\n    \"units\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/bloodbank/64121f23cfacf8e5b9ba226c",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"bloodbank",
+								"64121f23cfacf8e5b9ba226c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bloodbank data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTFlYjA4YTU3Yjg5YjZmNjc1MjA1OCIsImlhdCI6MTY3ODkwODc1MywiZXhwIjoxNjgxNTAwNzUzfQ.HKs3cOp9J8dPuKBnd8TXckxVNPOtoSeSVWioDCTfKXc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"units\": 55\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/bloodbank/64121f23cfacf8e5b9ba226c",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"bloodbank",
+								"64121f23cfacf8e5b9ba226c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receiver",
+			"item": [
+				{
+					"name": "Request a blood sample",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTJkYmEzMzJlOGMxOGMwNThhMzY4NSIsImlhdCI6MTY3ODk1ODUxMiwiZXhwIjoxNjgxNTUwNTEyfQ.ko5CfSg1BI1NQ2hoHOcL4cpGd2ANIsck8pKmL9KfuAo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodGroup\": \"A+\",\r\n    \"hospital\": \"6411eb08a57b89b6f6752058\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/request/",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Receiver Details by respective hospital",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTFlYjA4YTU3Yjg5YjZmNjc1MjA1OCIsImlhdCI6MTY3ODk1ODc5MSwiZXhwIjoxNjgxNTUwNzkxfQ.k2qMh6Z5j7cZQTlNpt2uPn751xv6rVXci3gH0X7sJfw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodGroup\": \"A+\",\r\n    \"hospital\": \"6411eb08a57b89b6f6752058\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7117/api/v1/request/",
+							"host": [
+								"http://localhost:7117/api/v1"
+							],
+							"path": [
+								"request",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
