@@ -1,6 +1,7 @@
 const express = require('express');
 const {
     getBloodBankData,
+    getBloodBankDataByHospital,
     createBloodBankData,
     deleteBloodBankData,
     updateBloodBankData
@@ -8,16 +9,25 @@ const {
 const BloodDetails = require('../models/BloodDetails');
 const router = express.Router();
 const advanceResults = require('../middlewares/advanceResults');
-const { protect } = require('../middlewares/auth');
+const { protect, authorize } = require('../middlewares/auth');
+
+router.get(
+    '/all',
+    advanceResults(BloodDetails, {
+        path: 'hospital',
+        select: 'name phone address email'
+    }),
+    getBloodBankData
+);
 
 router
     .route('/')
-    .get(advanceResults(BloodDetails), getBloodBankData)
-    .post(protect, createBloodBankData);
+    .get(protect, authorize('hospital'), getBloodBankDataByHospital)
+    .post(protect, authorize('hospital'), createBloodBankData);
 
 router
     .route('/:id')
-    .put(protect, updateBloodBankData)
-    .delete(protect, deleteBloodBankData);
+    .put(protect, authorize('hospital'), updateBloodBankData)
+    .delete(protect, authorize('hospital'), deleteBloodBankData);
 
 module.exports = router;

@@ -33,6 +33,7 @@ app.use(cookieParser());
 //Creating routers
 const auth = require('./routes/auth');
 const bloodBank = require('./routes/bloodBank');
+const requestBlood = require('./routes/requestBlood');
 
 //Connection to Database
 connectDB();
@@ -72,6 +73,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //TODO: Create your Routers here
 app.use('/api/v1/auth', auth);
 app.use('/api/v1/bloodBank', bloodBank);
+app.use('/api/v1/request', requestBlood);
 
 app.use(errorHandler);
 
